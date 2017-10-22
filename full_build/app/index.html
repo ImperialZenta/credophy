@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Credophy</title>
 
     <!-- CSS -->
     <!-- load bootstrap and our stylesheet -->
@@ -11,7 +10,32 @@
     <style>
         body {
             padding-top: 50px;
+            background-color: #294667;
+        },
+        .container {
+            background: #294667;
+            color: #FFF;
         }
+        .text-center {
+            color: #ffa800;
+            left: 50%;
+        },
+        h1 {
+            text-align: center;
+        },
+        .jumbotron {
+            color: #294667;
+        },
+        form {
+            background: #294667;
+        }
+        label {
+            color: #ffa800;
+        },
+        input.input-box{
+            background: #ffa800;
+        }
+
     </style>
 
     <!-- JS -->
@@ -20,27 +44,18 @@
 </head>
 
 <!-- declare our angular application and angular controller -->
+        <h1 class="text-center container-fluid">Credophy</h1>
+
+
+        <!-- form to update the message variable using ng-model -->
 
 <body class="container" ng-app="ipApp" ng-controller="mainController as main">
 
-    <div class="jumbotron">
+    <!-- <div class="jumbotron"> -->
 
 
         <!-- display the message -->
-        <h2 class="text-center">Credophy</h2>
-
-
-        <form ng-submit="main.addCredential()">
-
-        <!-- form to update the message variable using ng-model -->
-        <div class="form-group">
-            <label>Issuer</label>
-            <input type="text" class="form-control" placeholder="Issuer Private Key" ng-model="main.credentialData.ikey">
-        </div>
-
-
-        <h3>Recipient:</h3>
-
+        <form style="background-color:#294667">
             <div class="form-group row">
                 <label for="inputTitle" class="col-sm-2 col-form-label">Title:</label>
                 <div class="col-sm-10">
@@ -48,21 +63,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
+                <label for="inputName" class="col-sm-2 col-form-label">Recipient:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="main.credentialData.name">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputRkey" class="col-sm-2 col-form-label">Public Key:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputRkey" placeholder="Recipient Public Key" ng-model="main.credentialData.rkey">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputMajor" class="col-sm-2 col-form-label">Major:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputMajor" placeholder="Major" ng-model="main.credentialData.major">
+                    <input type="text" class="form-control" id="inputName" placeholder="Recipient" ng-model="main.credentialData.name">
                 </div>
             </div>
             <div class="form-group row">
@@ -77,13 +80,13 @@
                     <input type="text" class="form-control" id="inputEnd" placeholder="End Date" ng-model="main.credentialData.end">
                 </div>
             </div>
-            <button type="button" onclick="App.addCredential()">Add certificate</button>
+            <button type="button" class="btn btn-primary" onclick="App.addCredential()">Add certificate</button>
             <br><br>
             <span id="status"></span>
             <br>
       </form>
 
-    </div>
+    <!-- </div> -->
 
 </body>
 

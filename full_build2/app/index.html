@@ -8,14 +8,39 @@
     <style>
         body {
             padding-top: 50px;
+            background-color: #294667;
+        },
+        .container {
+            background: #294667;
+            color: #FFF;
+        }
+        .text-center {
+            color: #ffa800;
+            left: 50%;
+        },
+        h1 {
+            text-align: center;
+        },
+        h3 {
+            color: #ffa800;
+        }
+        .jumbotron {
+            color: #294667;
+        },
+        form {
+            background: #294667;
+        }
+        label {
+            color: #ffa800;
+        },
+        input.input-box{
+            background: #ffa800;
         }
     </style>
     <script src="./app.js"></script>
 </head>
 
 <body class="container" ng-app="firstApp" ng-controller="mainController as main">
-
-    <div class="jumbotron">
 
         <h2 class="text-center">Credophy</h2>
 
@@ -24,14 +49,17 @@
 
         <div class="form-group">
             <label>Hash:</label>
-            <input type="text" class="form-control" ng-model="main.credentialData.hash">
+            <input type="text" id="hash" class="form-control" ng-model="main.credentialData.hash">
         </div>
-        <button type="button" onclick="App.getCredential()">Get certificate</button>
+        <button type="button" class="btn btn-primary" onclick="App.getCredential()">Get certificate</button>
         </form>
+        <br>
+        <h3 style="color: #ffa800">Credentials:</h3>
         <br><br>
         <span id="status"></span>
         <br>
-        <h3>Credentials:</h3>        
+        </div>
+        <div id="table"></div>   
 <!--         <table class="table table-bordered">
                 <tbody>
                     <tr ng-repeat="credential in main.credentials">
@@ -40,8 +68,6 @@
                     </tr>
                 </tbody>
             </table> -->
-        
-    </div>
 
 </body>
 
