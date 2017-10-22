@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Credophy</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+    <script src="./app.js"></script>
+</head>
+
+<body class="container" ng-app="firstApp" ng-controller="mainController as main">
+
+    <div class="jumbotron">
+
+        <h2 class="text-center">Credophy</h2>
+
+
+        <form ng-submit="main.showCredential()">
+
+        <div class="form-group">
+            <label>Hash:</label>
+            <input type="text" class="form-control" ng-model="main.credentialData.hash">
+        </div>
+        <button type="button" onclick="App.getCredential()">Get certificate</button>
+        </form>
+        <br><br>
+        <span id="status"></span>
+        <br>
+        <h3>Credentials:</h3>        
+<!--         <table class="table table-bordered">
+                <tbody>
+                    <tr ng-repeat="credential in main.credentials">
+                        <td class="col-sm-2">{{ credentials.key }}</td>
+                        <td>{{ credentials.value }}</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        
+    </div>
+
+</body>
+
+</html>

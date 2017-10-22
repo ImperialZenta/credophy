@@ -49,11 +49,7 @@ window.App = {
     status.innerHTML = message;
   },
 
-  addCredential: function() {
-    var title = document.getElementById("inputTitle").value;
-    var name = document.getElementById("inputName").value;
-    var start_date = document.getElementById("inputStart").value;
-    var end_date = document.getElementById("inputEnd").value;
+  getCredential: function() {
     var self = this;
 
     // var amount = parseInt(document.getElementById("amount").value);
@@ -65,7 +61,6 @@ window.App = {
     var meta;
     Credophy.deployed().then(function(instance) {
       meta = instance;
-      return meta.issueCert.call(name, title, 123, parseInt(start_date), parseInt(end_date), {from: web3.eth.accounts[0]}).then(function(res){
       return meta.getCert.call(0);
     }).then(function(res) {
       console.log(res);
@@ -74,8 +69,7 @@ window.App = {
       console.log(e);
       self.setStatus("Error sending certificate; see log.");
     });
-  });
-}
+  }
 }
 
 window.addEventListener('load', function() {
