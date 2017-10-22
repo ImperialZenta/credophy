@@ -65,7 +65,9 @@ window.App = {
     var meta;
     Credophy.deployed().then(function(instance) {
       meta = instance;
-      return meta.issueCert(name, title, 123, parseInt(start_date), parseInt(end_date), {from: web3.eth.accounts[1]});
+      // return meta.issueCert.call(name, title, 123, parseInt(start_date), parseInt(end_date), {from: web3.eth.accounts[0]});
+      return meta.getCert.call(0);
+
     }).then(function(res) {
       console.log(res);
       self.setStatus("Transaction complete: " + res);

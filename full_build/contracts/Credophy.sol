@@ -2,6 +2,10 @@ pragma solidity ^0.4.4;
 
 contract Credophy {
 
+	function Credophy() {
+		issueCert(msg.sender, 'test title', 'test status', 123,1222);
+	}
+
 	struct Certificate {
         string title;
         string status;
